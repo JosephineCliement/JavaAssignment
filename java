@@ -57,6 +57,21 @@ public class a2 {
 }
 ===========================================================================================================================================
 Q.3 Create a method in a class which accepts a double and integer parameters and display the multiplication of passed values.
+Ans)
+package pck1;
+
+public class a3 {
+
+	public static void main(String[] args) {
+		
+		double x=2.5;
+		int y=20;
+		
+		System.out.println("Multilication : "+(x*y));
+	}
+
+}
+==========================================================================================================
 Q.4 Write a program where a class is having a function as display() which declares a city code as a local variable in it and give some default city code value in it. 
     Display () method display the city name which is passed to this method along with the city code.
 Q.5 Write a program to enter a year and check if the year is a leap year or not.
