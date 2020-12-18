@@ -114,7 +114,7 @@ public class A5 {
 
 	public void check(int x)
 	{
-		if(x%400==0)
+		if(x%4==0)
 			System.out.println("leap year ");
 
 		else
