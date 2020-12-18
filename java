@@ -104,6 +104,45 @@ public class a3 {
 Q.4 Write a program where a class is having a function as display() which declares a city code as a local variable in it and give some default city code value in it. 
     Display () method display the city name which is passed to this method along with the city code.
 Q.5 Write a program to enter a year and check if the year is a leap year or not.
+Ans)
+package practise;
+
+import java.util.Scanner;
+
+public class A5 {
+
+
+	public void check(int x)
+	{
+		if(x%400==0)
+			System.out.println("leap year ");
+
+		else
+			System.out.println(" not leap year ");
+		
+		
+	}
+
+	public static void main(String[] args) {
+		
+		A5 p=new A5();
+		
+		Scanner s=new Scanner(System.in);
+		
+		int x;
+		
+		System.out.println("Enter a year : ");
+		x=s.nextInt();
+		
+		p.check(x);
+		
+		s.close();
+		
+	}
+
+}
+=======================================================================================================================
+
 Q.6 Create a program to check for a number entered by user is Positive , negative or zero.
 Ans) package pck1;
 
