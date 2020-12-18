@@ -1,4 +1,33 @@
 Q.1 Create a program to Assign username & password in a method and display the username, password in a different function.
+Ans)
+package practise;
+
+public class A1 {
+
+	private String username;
+	private String password;
+	
+	public void getDetails(String username,String password)
+	{
+		this.username=username;
+		this.password=password;
+	}
+	
+	public void showDetails()
+	{
+		System.out.println("Username : "+username);
+		System.out.println("Password : "+password);
+	}
+	
+	public static void main(String[] args) {
+		A1 p=new A1();
+		
+		p.getDetails("Amita@bc","amitjadhav");
+		p.showDetails();
+	}
+
+}
+=============================================================================================================================================================
 Q.2 Write a program to Define employee Company as static and display the details of employee like eid,ename,salary with company name for 5 employees.
 Ans) package pck1;
 
