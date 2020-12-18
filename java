@@ -116,3 +116,40 @@ public class a6 {
 ==================================================================================================================================================================
 Q.7 Write a program to enter the height of a person in cm and weight of a person in kg, Calculate the BMI. If BMI value is less tha 18.5 then show "Underweight",
      BMI is in range from 18.5 to 24.9 show "Normal Weight" , If range is 25 to 25.9 then show "Overweight" otherwise show "Obesity"
+     
+     
+     Q.8 Create a class Employee . Declare name, yearOfExperiance, Salary. Create a method which takes the details from user. Take records of 5 employees using Array of 
+    objects. Create a method which checks the years of experiance of an employee. If Experiance is more than 3 years then Give 5000/- Rs Bonus to the employees .
+    If Experiance is more than 1 year & less than 3 years then Give bonus of 1000/- Rs. If Experiance is less than 1 year , no bonus will be given. Display the 
+    Updated details of every employee.
+Q.9 Write a program to create a Menu based program where perform the following operations.
+    Product (Class) : pid,pname,Description,cost
+    1. Display List of 5 products.
+    2. Display all products in Capital case
+    3. Display the Total cost of All products.
+    4. Dipslay average Cost of All products.
+    5. Display only Product Name and cost.
+Q.10 Create an array of names of 3 students and display names with length.
+Q.11 Make an array of 10 numbers and print the average of only even numbers.
+Q.12 Create an array of 5 double values and use foreach loop to print every value.
+Ans)
+package pck1;
+
+public class P14 {
+
+	public static void main(String[] args) {
+		
+		double numbers[]= {2.4,1.3,3.2,2.6,2.2};
+		
+	
+		
+		for(double x : numbers)
+		{
+			System.out.print(x+" , ");
+		}
+
+}
+}
+===============================================================================================
+===========================================================================================================================
+
