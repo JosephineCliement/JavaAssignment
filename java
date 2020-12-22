@@ -222,13 +222,40 @@ public class P14 {
 
 Q.13 Write a program to make a class as Factorial where calculate the factorial in a function the function returns the factorial of the passed number to this function. 
      Print the factorial of the number.
-
+=======================================================================================================================================================
 Q.14 Create a Class Alphabets which is printing Capital case alphabets in its member method. Create another Class where a main function resides. In main method create 
     the object of Alphabets class and call the method which is printing alphabets.
+ Ans)
+ package practise;
 
+class Alphabets
+{
+	public void fun1()
+	{
+		
+
+		String s1="hello world";
+		
+
+		System.out.println(s1.toUpperCase());
+	}  
+	
+}
+public class A14 {
+
+	public static void main(String[] args) {
+	Alphabets ob=new Alphabets();
+	
+	ob.fun1();
+    
+	}
+
+}
+
+=============================================================================================================================================================
 Q.15 Write a program to create a method in a class which takes the first name as first parameter and last name as second parameter. This method returns the full name. 
     Print full name.
-
+===========================================================================================================================================================
 Q.16 Write a program to overload a method named as getResult() 3 times , first definition prints the cube of passed number. Second function prints square of passed 
      number. Third definition print that number.
 
