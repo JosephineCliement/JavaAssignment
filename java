@@ -265,4 +265,55 @@ Q.18 Write a program to create two objects of a class named as Numbers. In which
      compare two objects together and print the maximum value
 
 ===========================================================================================================================
+Q.19 Create an interface named as Calculator and create a method in it as getResult(). 
+     7 class are to be defined which are implementing Calculator interface.
+     Class A will return factorial of a number.    (Vishal)
+     Class B will return square of a number.       (Saloni)
+     Class C will return maximum of two numbers.   (Hemant)
+     Class D will print numbers from 1 to 50.      (Josephine)
+     Class E will return the sum of 5 digit number. (Nimesh)
+     Class F will return the sum of 5 values in an array.  (Abhishek)
+     Class G will return the temperature in celcius for the given ferhenite value. (Nilesh)
+Q.20 Write a program to take first name and lastname as a command line arguments and print the full name in capital case along with the length of fullname.
+Q.21 Create a class Person. Create name,mobile,age as instance variables . Make getters and setters and display the records of 3 cusomers using array of objects and 
+     print records.
+Q.22 Define name and salary of an employee both as a string variable. Define a method which updates the salary of an employee by 1000. Print updated salary with name.
+Q.23 Write a program to declare a sring object using literal and assign a string "Hello" in it. Print the Hello using charAt() method in Capital Case.
+Q.24 Write a program to print the length of a string without using length attribute.
+Q.25 Take user name and password from user.If user name is "admin" and password is "Abcd1234" then print Welcome UserName . Compare userName using equalIgnoreCase(). 
+     Compare password without using equalIgnoreCase().
+Q.26 create a class Result where marks of 5 subjects are taken from user in a method as InputMarks() and print the percentage and grade based on percentage in a 
+     different method as ShowPercentage(). Print the Highest and Lowest Marks in a subject.
+Q.27 Display the following Pattern :
+       1
+       1 2
+       1 2 3
+       1 2 3 4
+       1 2 3 4 5
+Ans)
+package practise;
+
+
+
+public class A27 {
+	
+
+	public static void main(String[] args) {
+		
+	
+		for(int i=1;i<=5;i++)        
+		{
+			for(int j=1;j<=i;j++)    
+			{
+				     System.out.print(j);
+		
+	         }
+			System.out.println();
+
+         }
+		
+	}
+	
+}
+====================================================================================================================================
 
