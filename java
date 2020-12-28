@@ -317,3 +317,64 @@ public class A27 {
 }
 ====================================================================================================================================
 
+Q.28 Declare a string as "Welcome to Java Programming" , Print "Java" from this String. 
+
+Q.29 Write a program to reverse the entered string without using reverse method.
+
+Q.30 Make an array of 5 integers and print elements in reverse order.
+
+Q.31 Make an array of 10 numbers and print the sum of all even elements.
+
+Q.32 Make an array of 3 integers and find the maximum of 3 nos and print it.
+
+Q.33 Make an array of 5 integers and check any enetered no exists in the array or not.If Exists then print the array element with position of the element in the array.
+
+Q.34 Create an interface Area which has a method getArea(). 
+    Create 3 Classes circle, Triangle, Rectangle which are implementing the method. Calculate the area and show it.
+Q.35 Create an Abstract Class student which has an abstract method showDetails().
+    Create an interface Marks which has a variable TotalMarks=500 and a method getMarks().
+    Create a Class Result which extends student class and implements Marks interface.
+    In Result class calculate the Percentage of a student and Print Result.
+
+Q.36 create a final class in which a method Factorial() returns the factorial of the passed number.Make another class where factorial is to be displayed in a method showFactorial()
+Q.37 Write a program to Make a class Numbers which has a method getNumbers() which takes two numbers from user. Create another class Addition which inherits
+     class Numbers and does Addition of two numbers in a method calculate() and print the addition.
+Q.38 Create your Exception class named as PasswordLengthException and take username and password from the user . If the length of the password is less than 8 characters
+     then throw the PasswordLengthException on giving a message as "Password is too short" otherwise Show the message as "Welcome UserName".
+Q.39 create 2 thread objects of a class .create a thread class on implementing Runnable interface, set name of first thread as "even" and second thread as "odd". Even thread 
+      Printing only even nos between 1 and 20 and odd thread printing only odd nos between 1 and 20.
+Q.40 Create a class mobile and create a subclass product of it which is implementing Runnable interface. Create two thread objects . One thread is printing product id and second
+     thread object is printing product name.
+Q.41 Create a string str="10-20-30-40-50". Tokenize the string and display the average of all numbers.
+Q.42 Display the current date and time and split the date and time and print it seperately.
+Ans)
+package practise;
+
+public class A42 {
+
+	public static void main(String[] args) {
+   String message="29 13:00";
+		
+		String[]str =message.split(" ");
+		
+		
+		for(String word:str)
+		{
+			System.out.println(word);
+			
+			}
+		
+		
+		
+	}
+
+}
+============================================================================================================================================================
+Q.43 Create an ArrayList of names of 5 students and copy all names to another ArrayList.
+Q.44 Create an ArrayList of 5 integers and display the average of all numbers.
+Q.45 Read firstname and Lastname from the user and concatenate Firstname and lastname including space in between, Then Split the full name and display firstname and lastname
+     seperately.
+Q.46 Make an ArrayList of five city names and search a specific city and display city name with position in ArrayList.
+Q.47 Make ArrayList of 5 strings and display every string along with the length.
+Q.48 Create a List A which contains 5 strings .Create a List B where length of all strings from List A should be stored.
+
