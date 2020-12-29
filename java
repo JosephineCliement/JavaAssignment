@@ -375,6 +375,31 @@ Q.44 Create an ArrayList of 5 integers and display the average of all numbers.
 Q.45 Read firstname and Lastname from the user and concatenate Firstname and lastname including space in between, Then Split the full name and display firstname and lastname
      seperately.
 Q.46 Make an ArrayList of five city names and search a specific city and display city name with position in ArrayList.
+Ans)
+package practise;
+
+import java.util.ArrayList;
+
+public class A46 {
+
+	public static void main(String[] args) {
+
+		ArrayList<String> list1=new ArrayList<String>();
+		
+		list1.add("Delhi");
+		list1.add("Bombay");
+		list1.add("Pune");
+		list1.add("Bangalore");
+		list1.add("Bangel");
+		System.out.println(list1.get(2));
+		
+
+
+	}
+
+}
+==========================================================================================================
+
 Q.47 Make ArrayList of 5 strings and display every string along with the length.
 Q.48 Create a List A which contains 5 strings .Create a List B where length of all strings from List A should be stored.
 
