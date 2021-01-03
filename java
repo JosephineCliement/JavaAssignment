@@ -103,6 +103,27 @@ public class a3 {
 ==========================================================================================================
 Q.4 Write a program where a class is having a function as display() which declares a city code as a local variable in it and give some default city code value in it. 
     Display () method display the city name which is passed to this method along with the city code.
+ Ans
+  
+   package pck1;
+
+public class a4 {
+	String city;
+	
+	public void show(String n)
+	{
+		int Ccode=1011;
+		city=n;
+		System.out.println("City : "+city+" City code : "+Ccode);
+	}
+	
+	public static void main(String[] args) 
+	{
+		a4 c=new a4();
+		c.show("Pune");
+	}
+}
+==================================================================================================================================
 Q.5 Write a program to enter a year and check if the year is a leap year or not.
 Ans)
 package practise;
@@ -198,6 +219,35 @@ Q.9 Write a program to create a Menu based program where perform the following o
     4. Dipslay average Cost of All products.
     5. Display only Product Name and cost.
 Q.10 Create an array of names of 3 students and display names with length.
+Ans
+   package pck1;
+
+public class A10 {
+	public void demoForEach()
+	{
+		System.out.println();
+		String numbers[]=new String[3];
+		numbers[0]="Neha";
+		numbers[1]="Priya";
+		numbers[2]="Jaya";
+		int i=1;
+		System.out.println("========Topper========");
+		for(String x : numbers)    
+		{
+			System.out.println(i+") "+x+" Length of Name is : "+x.length());
+			i++;
+		}
+
+	}
+
+	public static void main(String[] args)
+	{
+		A10 obj=new A10();
+		
+		obj.demoForEach();
+	}
+}
+===============================================================================================================================
 Q.11 Make an array of 10 numbers and print the average of only even numbers.
 Q.12 Create an array of 5 double values and use foreach loop to print every value.
 Ans)
