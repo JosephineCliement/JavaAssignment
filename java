@@ -206,11 +206,154 @@ public class a6 {
 Q.7 Write a program to enter the height of a person in cm and weight of a person in kg, Calculate the BMI. If BMI value is less tha 18.5 then show "Underweight",
      BMI is in range from 18.5 to 24.9 show "Normal Weight" , If range is 25 to 25.9 then show "Overweight" otherwise show "Obesity"
      
-     
+       
+ANS.    
+     package javaPrograms;
+
+class BMI {
+
+	private float weigh;
+	private float height;
+	private float bmi;
+	
+	public void passvals(float w,float h)
+	{
+		if(w<600)
+		{
+			weigh = w;
+		}
+		else
+		{
+			System.out.println("BEYOND ANY PERSON THAT EVER EXISTED ");
+		}
+		
+		if(h<350)
+		{
+			height = h;
+		}
+		else
+		{
+			System.out.println("ADD PERSONS HEIGHT, NOT GIRAFFES");
+		}
+	}
+	
+	public void findBMI()
+	{
+	    bmi = (weigh/(height/100*height/100));
+		System.out.println("BMI : "+bmi);
+		
+		if(bmi<=18.5)
+		{
+			System.out.println("UNDERWEIGHT,GAIN SOME MASS");
+		}
+		else if((bmi>18.5)&&(bmi<=24.9))
+		{
+			System.out.println("NORMAL WEIGHT");
+		}
+		else if((bmi>25.0)&&(bmi<=29.9))
+		{
+			System.out.println("OVERWEIGHT");
+		}
+		else if(bmi>30.0)
+		{
+			System.out.println("OBESE, GO EXERCISE");
+		}
+	}
+}
+public class pro30 {
+	
+	public static void main(String[] args) {
+
+		BMI tab = new BMI();
+	    
+		tab.passvals(78,170);
+		tab.findBMI();
+	}
+
+}
+=================================================================================================================================
      Q.8 Create a class Employee . Declare name, yearOfExperiance, Salary. Create a method which takes the details from user. Take records of 5 employees using Array of 
     objects. Create a method which checks the years of experiance of an employee. If Experiance is more than 3 years then Give 5000/- Rs Bonus to the employees .
     If Experiance is more than 1 year & less than 3 years then Give bonus of 1000/- Rs. If Experiance is less than 1 year , no bonus will be given. Display the 
     Updated details of every employee.
+      
+ANS. package javaPrograms;
+
+import java.util.Scanner;
+
+class emp1 {
+	public String name;
+	public int yr_of_exp,sal;
+	
+	public void setdetails(String name,int yr_of_exp,int sal)
+	{
+		this.name = name;
+		this.yr_of_exp = yr_of_exp;
+		
+		if(yr_of_exp <= 50)
+		{
+		   checkyrs(yr_of_exp,sal);
+		}
+	}
+		public void checkyrs(int yr,int sal)
+		{
+			if(yr > 3)
+			{
+				this.sal = (sal+6000);
+			}
+			else if((yr > 1)&&(yr < 3))
+			{
+				this.sal = (sal+2000);
+			}
+			else
+			{
+				this.sal = sal;
+			}
+		}
+	
+	public void showdet(int in)
+	{
+		System.out.println("NAME "+(in+1)+" : "+name);
+		System.out.println("YR_OF_EXP"+(in+1)+" : "+yr_of_exp);
+		System.out.println("SALARY"+(in+1)+" : "+sal);
+	}
+}
+public class ASSIGN8 {
+	public static void main(String[] args) {
+
+       emp1 emp[] = new emp1[5];
+       
+       Scanner st = new Scanner(System.in);
+      
+       for(int i=0;i<emp.length;i++)
+       {
+    	   emp1[i] = new emp1();
+    	   
+    	   System.out.println("ENTER EMPLOYEE "+(i+1)+" NAME : ");
+    	   String nm = st.nextLine();
+    	   st.nextLine();
+    	   
+    	   System.out.println("ENTER EMPLOYEE "+(i+1)+" YEARS OF EXPERIENCE : ");
+    	   int yr = st.nextInt();
+    	   st.nextLine();
+    	   
+    	   System.out.println("ENTER EMPLOYEE "+(i+1)+" SALARY : ");
+    	   int s = st.nextInt();
+    	   st.nextLine();
+    	   
+    	   emp[i].setdetails(nm, yr, s);
+       }
+       for(int i=0;i<emp.length;i++)
+       {
+    	   emp[i].showdet(i);
+       }
+       
+       st.close();       
+	}
+}
+========================================================================================================================================
+
+    
 Q.9 Write a program to create a Menu based program where perform the following operations.
     Product (Class) : pid,pname,Description,cost
     1. Display List of 5 products.
@@ -218,6 +361,136 @@ Q.9 Write a program to create a Menu based program where perform the following o
     3. Display the Total cost of All products.
     4. Dipslay average Cost of All products.
     5. Display only Product Name and cost.
+    
+        
+ANS. package javaPrograms;
+
+class class1 {
+	public int pid,cost,result,avg;
+	public String pname,Description;
+	
+	public void setdetails(int pid,int cost,String pname,String Description)
+	{
+		this.pid = pid;
+		this.cost = cost;
+		this.pname = pname;
+		this.Description = Description;
+	}
+
+	public void getdetails()
+	{
+		System.out.println(" PRODUCT ID : "+pid+" PRODUCT NAME : "+pname+" PRODUCT COST : "+cost+" PRODUCT DSCP : "+Description);
+	}
+	
+	public void getdetails2()
+	{
+		System.out.println(" PRODUCT ID : "+pid+", PRODUCT NAME : "+pname.toUpperCase()+", PRODUCT COST : "+cost+", PRODUCT DSCP : "+Description.toUpperCase());
+	}
+	
+	
+	public void totamount(Product10 pro1,Product10 pro2,Product10 pro3,Product10 pro4,Product10 pro5)
+	{
+		result = (pro1.cost)+(pro2.cost)+(pro3.cost)+(pro4.cost)+(pro5.cost);
+		
+		System.out.println("TOTAL AMOUNT OF COSTS OF "+result);
+	}
+	
+	public void getavg()
+	{
+		avg = result/5;
+		System.out.println("AVERAGE COSTS OF ALL PRODUCTS : "+avg);
+	}
+	
+	public void getdetails3()
+	{
+		System.out.println(" PRODUCT NAME : "+pname.toUpperCase()+", PRODUCT COST : "+cost);
+	}
+}
+
+public class pro34 {
+
+	public static void main(String[] args) {
+
+		Product10 pro1 = new Product10();
+		Product10 pro2 = new Product10();
+		Product10 pro3 = new Product10();
+		Product10 pro4 = new Product10();
+		Product10 pro5 = new Product10();
+  
+		pro1.setdetails(101,500,"mouse","sleek and lightier than pricey 2000 rs mouse");
+		pro2.setdetails(102,2000,"ram","not the god");
+		pro3.setdetails(103,5000,"keyboard","made from high quality, but dont try smashing ");
+		pro4.setdetails(104,50000,"laptop","because who will buy desktop ");
+		pro5.setdetails(105,500,"ps5","your dream partner");
+		
+	    pro1.getdetails();
+	    System.out.println("===============================================================================================================================================================");
+	
+	    pro2.getdetails();
+	    System.out.println("===============================================================================================================================================================");
+	
+	    pro3.getdetails();
+	    System.out.println("===============================================================================================================================================================");
+	
+	    pro4.getdetails();
+	    System.out.println("===============================================================================================================================================================");
+	
+	    pro5.getdetails();
+	    System.out.println("===============================================================================================================================================================");
+	
+	    
+	    System.out.println();
+	    System.out.println(" UPPER CASE DATA :-");
+	    System.out.println();
+	    System.out.println();
+	    
+	    
+	    pro1.getdetails2();
+	    System.out.println();
+	    pro2.getdetails2();
+	    System.out.println();
+	    pro3.getdetails2();
+	    System.out.println();
+	    pro4.getdetails2();
+	    System.out.println();
+	    pro5.getdetails2();
+	    System.out.println();
+
+	    System.out.println();
+	    pro1.totamount(pro1,pro2,pro3,pro4,pro5);
+	    System.out.println();
+
+	    System.out.println();
+	    pro1.getavg();
+	    System.out.println();
+            System.out.println();
+	    
+	    System.out.println();
+
+	    pro1.getdetails3();
+	    System.out.println();
+	    System.out.println();
+	    
+	    pro2.getdetails3();
+	    System.out.println();
+	    System.out.println();
+	    
+	    pro3.getdetails3();
+	    System.out.println();
+	    System.out.println();
+	    
+	    pro4.getdetails3();
+	    System.out.println();
+	    System.out.println();
+	    
+	    pro5.getdetails3();
+	    System.out.println();
+	    System.out.println();
+
+	}
+
+}
+===========================================================================================================================================
 Q.10 Create an array of names of 3 students and display names with length.
 Ans
    package pck1;
@@ -249,6 +522,49 @@ public class A10 {
 }
 ===============================================================================================================================
 Q.11 Make an array of 10 numbers and print the average of only even numbers.
+ANS. package javaPrograms;
+
+import java.util.Scanner;
+
+class array1 {
+	double avg;
+	public void getavg(double nun)
+	{
+		avg = nun;
+		System.out.println("AVERAGE OF 10 NUMBERS IS : "+avg);
+	}	
+}
+public class ASSIGN11 {
+	
+	public static void main(String[] args) {
+		double sum = 0.0;
+		double avg;
+		int con = 0;
+		int arr[] = new int[10];
+		
+		array2 ag = new array2();
+		Scanner sd = new Scanner(System.in);
+		
+		
+		for(int i=0;i<arr.length;i++)
+		{
+			System.out.println("ENTER THE NUMBER "+(i+1)+" : ");
+		    arr[i] = sd.nextInt();
+		    
+		    if(arr[i]%2==0)
+		    {
+		    sum = sum + arr[i];
+		    con++;
+		    }
+		}
+		avg = sum / con;
+		
+		ag.getavg(avg);	
+		
+	}
+
+}
+===========================================================================================================================
 Q.12 Create an array of 5 double values and use foreach loop to print every value.
 Ans)
 package pck1;
@@ -272,6 +588,26 @@ public class P14 {
 
 Q.13 Write a program to make a class as Factorial where calculate the factorial in a function the function returns the factorial of the passed number to this function. 
      Print the factorial of the number.
+          
+ANS. package javaPrograms;
+
+class FAC1 { 
+    static int factorial(int n) 
+    { 
+        int res = 1, i; 
+        for (i = 2; i <= n; i++) 
+            res *= i;     //res = res*i
+        return res; 
+    } 
+  
+    public static void main(String[] args) 
+    { 
+        int num = 5; 
+        System.out.println( 
+            "Factorial of " + num 
+            + " is " + factorial(5)); 
+    } 
+} 
 =======================================================================================================================================================
 Q.14 Create a Class Alphabets which is printing Capital case alphabets in its member method. Create another Class where a main function resides. In main method create 
     the object of Alphabets class and call the method which is printing alphabets.
@@ -305,12 +641,108 @@ public class A14 {
 =============================================================================================================================================================
 Q.15 Write a program to create a method in a class which takes the first name as first parameter and last name as second parameter. This method returns the full name. 
     Print full name.
+    ANS. package javaPrograms;
+
+import java.util.Scanner;
+
+class method1 {
+	String fname,lname;
+      public void getmeth(String a,String b)
+      {
+    	  fname = a;
+    	  lname = b;
+      }
+      
+      public void showfullnm()
+      {
+    	  System.out.println("FULL NAME : "+fname+" "+lname);
+      }
+}
+public class ASSIGN15 {
+
+	public static void main(String[] args) {
+    method y = new method();
+    
+    Scanner s = new Scanner(System.in);
+    System.out.println("ENTER THE FIRST NAME : ");
+    String ab = s.nextLine();
+    
+    System.out.println("ENTER THE LAST NAME : ");
+    String bc = s.nextLine();
+    
+    y.getmeth(ab,bc);
+    
+    y.showfullnm();
+	}
+
+}
+
 ===========================================================================================================================================================
 Q.16 Write a program to overload a method named as getResult() 3 times , first definition prints the cube of passed number. Second function prints square of passed 
      number. Third definition print that number.
+     
+ANS. public class ASSI6 {
 
+	double getresult(double a)
+	{
+		double res;
+		res = a*a*a;
+		return res;
+		
+	}
+	int getresult(int b)
+	{
+		int res;
+		res = b*b;
+		return res;
+	}
+	float getresult(float c)
+	{
+		return c;
+	}
+	public static void main(String[] args) {
+		ASSI6 a = new ASSI16();
+		
+		System.out.println(a.getresult(10.3456));
+		System.out.println(a.getresult(35));
+		float h = (float)23.34398483;
+		System.out.println(a.getresult(h));
+	}
+
+}
+===================================================================================================================================
 Q.17 Write a program to find the sum of digits of a number.
+ANS. import java.util.Scanner;
 
+public class ASSI7 {
+	public long hub;
+    public long digit(long ab)
+    {
+    	long rem;
+    	long sum = 0;
+    	
+        while(ab!='\0')
+        {
+        	rem = ab%10;
+        	sum = sum + rem;
+        	ab = ab/10;
+        }
+        System.out.println("SUM OF DIGITS : "+sum);
+        hub = sum;
+        return hub;
+    }
+	public static void main(String[] args) {
+		ASSI7 ass = new ASSI7();
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("ENTER THE NUMBER : ");
+		int sub = sc.nextInt();
+		
+		ass.digit(sub);		
+	}
+
+}
+===================================================================================================================================================
 Q.18 Write a program to create two objects of a class named as Numbers. In which there is a function getMax(). Assign a value for a number to every object and 
      compare two objects together and print the maximum value
 
