@@ -1139,9 +1139,57 @@ public class A27 {
 ====================================================================================================================================
 
 Q.28 Declare a string as "Welcome to Java Programming" , Print "Java" from this String. 
+Ans)
 
+ANS. package basicprograms5;
+
+public class ASSI28 {
+
+    public static void func()
+    {
+    	String st = "Welcome to Java Programming";
+    	
+    	System.out.println(st);
+    	System.out.println(st.substring(11,15));
+    }
+	public static void main(String[] args) {
+    ASSI28 as = new ASSI28();
+    
+    ASSI28.func();
+	}
+
+}
+===============================================================================================================================================================================
 Q.29 Write a program to reverse the entered string without using reverse method.
 
+ANS. package javaPrograms;
+
+import java.util.Scanner;
+
+public class ASSI29 {
+
+    public void rever(String no) 
+    {
+    	for(int i=no.length();i>=0;--i)
+    	{
+    		System.out.println(no.charAt(i-1));
+    	}
+    }
+  
+	public static void main(String[] args) {
+    ASSI29 asi = new ASSI29();
+    
+    Scanner sc = new Scanner(System.in);
+    
+    System.out.println("ENTER THE STRING : ");
+    String st = sc.nextLine();
+    
+    asi.rever(st);
+    sc.close();
+	}
+
+}
+==============================================================================================================================================================================
 Q.30 Make an array of 5 integers and print elements in reverse order.
 
 Q.31 Make an array of 10 numbers and print the sum of all even elements.
