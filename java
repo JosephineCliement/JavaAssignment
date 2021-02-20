@@ -1193,28 +1193,523 @@ public class ASSI29 {
 Q.30 Make an array of 5 integers and print elements in reverse order.
 
 Q.31 Make an array of 10 numbers and print the sum of all even elements.
+ANS. package javaPrograms;
 
+import java.util.Scanner;
+
+class assign {
+	public int function(int arr[])
+	{
+		int sum = 0;
+		try 
+		{
+		for(int i=0;i<arr.length;i++)
+		  {
+			if(arr[i]%2!=0)
+				throw new ArithmeticException();
+			else
+			{
+				sum = sum + arr[i];
+			}
+		  }
+		}
+		catch(ArithmeticException ae)
+	    {
+	     System.out.println("ELEMENTS CANNOT BE ODD NUMBERS"); 	
+	    }
+		return sum;
+    }
+}
+public class ASSIGN31 {
+
+	public static void main(String[] args) {
+    int arr[] = new int[10];
+    
+    Scanner sc = new Scanner(System.in);
+    
+    for(int i=0;i<arr.length;i++)
+    {
+    	System.out.println("ENTER THE ELEMENTS : ");
+        arr[i] = sc.nextInt();
+    }
+    assign ass = new assign();
+     
+    System.out.println(ass.function(arr));
+
+    sc.close();
+  }
+}
+===============================================================================================================================================================================
 Q.32 Make an array of 3 integers and find the maximum of 3 nos and print it.
+ANS. package javaPrograms;
 
+public class ASSI32 {
+    public void func(int arr[])
+    {
+    	      
+    		  int biggest = arr[0];
+    		  if(arr[1] > biggest)
+    		  {
+    		  biggest = arr[1];
+    		  }
+    		  Else if(arr[2] > biggest)
+    		  {
+    			  biggest = arr[2];
+    		  }
+    		  Else if(arr[0] > biggest)
+    		  {
+    			  biggest = arr[0];
+    		  }
+    		  System.out.println(biggest);
+    }
+	public static void main(String[] args) {
+	ASSI32 ss = new ASSI32();
+	int arr[] = new int[] {10,21,41};   
+
+	ss.func(arr);
+	}
+
+}
+===============================================================================================================================================================
 Q.33 Make an array of 5 integers and check any enetered no exists in the array or not.If Exists then print the array element with position of the element in the array.
 
+ANS. package javaPrograms;
+
+import java.util.Scanner;
+
+class array7 {
+	public void array(int arr[])
+	{
+	   	for(int i=0;i<arr.length;i++)
+	   	{
+	   		try {
+	   		if(arr[i]==0)
+	   			throw new ArithmeticException();
+	   		else
+	   		System.out.println("POSITION : "+(i+1)+" = "+arr[i]);
+	   		}
+	   		catch(ArithmeticException ae)
+	   		{
+	   			System.out.println("AT POSITION : "+(i+1)+" = ELEMENT IS NOT ENTERED ");
+	   		}
+	   	}
+    }
+}
+public class ASSI33 {
+
+	public static void main(String[] args) {
+    int arr[] = new int[5];
+    
+    array7 ar = new array7();
+    Scanner sc = new Scanner(System.in);
+    
+    for(int i=0;i<arr.length-1;i++)
+    {
+    	System.out.println("ENTER THE NUMBER :");
+    	arr[i] = sc.nextInt();
+    }
+    ar.array(arr);
+	}
+
+}
+=============================================================================================================================================================================
 Q.34 Create an interface Area which has a method getArea(). 
     Create 3 Classes circle, Triangle, Rectangle which are implementing the method. Calculate the area and show it.
+  Ans)
+      
+ANS. package javaPrograms;
+
+import java.util.Scanner;
+
+interface AREA {
+	public void getArea(double d);
+	
+	Scanner sc = new Scanner(System.in);
+}
+
+class circle implements AREA{
+    final double pi = 3.14;
+	@Override
+	public void getArea(double d) {
+    	double res = pi * d *d;
+    	System.out.println("AREA OF CIRCLE : "+res);
+	}
+}
+
+class Triangle implements AREA {
+    public double height;
+	
+	@Override
+	public void getArea(double d) {
+    System.out.println("ENTER BASE FOR TRIANGLE : ");
+	double base = sc.nextDouble();
+		
+	height = d;
+	double half = 0.5;
+	
+	double area = half * base * height;
+	System.out.println("AREA OF TRIANGLE : "+area);
+	}
+}
+
+class Rectangle implements AREA {
+
+	double length;
+	@Override
+	public void getArea(double d) {
+	System.out.println("ENTER THE BREADTH OF RECTANGLE :");
+	double breadth = sc.nextDouble();
+	
+	length = d;
+	double area = length * breadth; 
+	
+	System.out.println("AREA OF RECTANGLE : "+area);
+	}
+}
+
+public class ASSI4 {
+
+	public static void main(String[] args) {
+    circle cir = new circle();
+    Triangle tri = new Triangle();
+    Rectangle rec = new Rectangle();
+    
+    cir.getArea(10);
+    tri.getArea(20);
+    rec.getArea(24);
+	}
+
+}
+===============================================================================================================================================================================
 Q.35 Create an Abstract Class student which has an abstract method showDetails().
     Create an interface Marks which has a variable TotalMarks=500 and a method getMarks().
     Create a Class Result which extends student class and implements Marks interface.
     In Result class calculate the Percentage of a student and Print Result.
 
+
+    
+AMS. package javaPrograms;
+
+import java.util.Scanner;
+
+abstract class students {
+	
+	public abstract double showdetails(int a);
+	
+}
+
+interface marks {
+	public int TotalMarks=500;
+	
+	public void getMarks();
+	
+	Scanner sc = new Scanner(System.in);	
+}
+
+class Result extends students implements marks {
+
+	@Override
+	public void getMarks() {
+    int sum = 0;
+	for(int i=0;i<5;i++)
+	   {
+	System.out.println("ENTER THE MARKS : ");   
+	int mrk = sc.nextInt();
+	   sum = sum + mrk;
+	   }
+	System.out.println("PERCENT : "+showdetails(sum));
+	System.out.println();
+	}
+	
+	@Override
+	public double showdetails(int sum) {
+	double per; 
+	per = sum * 100 / TotalMarks;
+	
+	return per;
+	}
+	
+	
+}
+public class ASSI35 {
+
+	public static void main(String[] args) {
+    Result s1 = new Result();
+    
+    s1.getMarks();
+    
+	}
+}
+==============================================================================================================================================================================
 Q.36 create a final class in which a method Factorial() returns the factorial of the passed number.Make another class where factorial is to be displayed in a method showFactorial()
+
+ANS. package javaPrograms;
+
+import java.util.Scanner;
+
+final class fact2 {
+     public int factorial(int pass)
+     {
+    	 int res =1;
+    	 for(int i=2;i<=pass;i++)
+    	 {
+    		 res *= i; 
+    	 }
+    	 return res;
+     }
+}
+
+class cl {
+	int res;
+	public cl(int result)
+	{
+		res = result;
+	}
+
+	public void showdetails()
+	{
+		System.out.println("FACTORIAL IS : "+res);
+   }
+}
+public class ASSI36 {
+	public static void main(String[] args) {
+    fac2 f = new fac2();
+    
+    Scanner sc = new Scanner(System.in);
+    System.out.println("ENTER THE NUMBER WHOSE FACTORIAL IS REQUIRED : ");
+    int num = sc.nextInt();
+    
+    cl c = new cl(f.factorial(num));
+    
+    c.showdetails();
+    
+    }
+
+}
+==============================================================================================================================================================================
 Q.37 Write a program to Make a class Numbers which has a method getNumbers() which takes two numbers from user. Create another class Addition which inherits
      class Numbers and does Addition of two numbers in a method calculate() and print the addition.
+   
+      
+ANS. package javaPrograms;
+
+import java.util.Scanner;
+
+class numbers {
+	public double dub1;
+	public double dub2;
+	public void getnumbers(double d1,double d2)
+	{
+		dub1 = d1;
+		dub2 = d2;
+    }
+}
+
+class addition1 extends numbers21 {
+
+	public void calculate()
+	{
+		System.out.println("SUM OF TWO USER PASSED NUMBERS IS : "+(dub1 + dub2));
+  }
+}
+public class ASSI22 {
+
+	public static void main(String[] args) {
+	addition1 add = new addition1();
+	
+    Scanner sc = new Scanner(System.in);
+    
+    System.out.println("ENTER THE NUMBER : ");
+    double do1 = sc.nextDouble();
+    
+    System.out.println("ENTER THE NUMBER : ");
+    double do2 = sc.nextDouble();
+  
+    add.getnumbers(do1,do2);
+    
+    add.calculate();
+	}
+
+}
+================================================================================================================================================================================
 Q.38 Create your Exception class named as PasswordLengthException and take username and password from the user . If the length of the password is less than 8 characters
      then throw the PasswordLengthException on giving a message as "Password is too short" otherwise Show the message as "Welcome UserName".
+     
+      
+ANS. package javaPrograms;
+
+import java.util.Scanner;
+
+class PasswordLengthException extends Exception
+{
+	PasswordLengthException()
+	{
+	System.out.println("PASSWORD CANNOT BE LESS THAN 8 CHARACTERS");	
+	}
+}
+
+class userpass {
+	String user;
+	String pass;
+	public void setlogindet(String u,String p) 
+	{
+		user = u;
+		try {
+		
+		if(p.length()<=8)
+			throw new PasswordLengthException();
+		else
+			pass = p;
+		    System.out.println("WELCOME "+user);
+		}
+		catch(PasswordLengthException pe)
+		{
+			pe.printStackTrace();
+		}
+	}  
+}
+public class ASSI8 {
+    
+	public static void main(String[] args) {
+    userpass up = new userpass();
+    
+    Scanner sc = new Scanner(System.in);
+    
+
+    System.out.println("ENTER THE USERNAME:");
+    String usernm = sc.nextLine();
+    
+    System.out.println("ENTER THE PASSWORD :");
+    String passwd = sc.nextLine();
+    
+    up.setlogindet(usernm,passwd);
+	}
+
+}
+==============================================================================================================================================================================
 Q.39 create 2 thread objects of a class .create a thread class on implementing Runnable interface, set name of first thread as "even" and second thread as "odd". Even thread 
       Printing only even nos between 1 and 20 and odd thread printing only odd nos between 1 and 20.
+        
+ANS. package javaPrograms;
+
+class mythread5 extends Thread implements Runnable {
+	public void run()
+	{
+		System.out.println(Thread.currentThread().getName());
+		if(Thread.currentThread().getName()=="EVEN")
+		{
+			for(int i=1;i<=20;i++)
+			{
+				if(i%2==0)
+				{
+					System.out.println("EVEN NUMBERS ARE : "+i);
+			    }
+			}
+		}
+		else if(Thread.currentThread().getName()=="ODD")
+		{
+			for(int i=1;i<=20;i++)
+			{
+				if(i%2!=0)
+				{
+					System.out.println("ODD NUMBERS ARE : "+i);
+			    }
+			}
+		}
+	}
+}
+public class ASSI{
+
+	public static void main(String[] args) {
+	mythread5 th1 = new mythread5();
+	
+	Thread t1 = new Thread(th1);
+	
+	t1.setName("EVEN");
+	t1.start();
+	
+	Thread t2 = new Thread(th1);
+	t2.setName("ODD");
+	
+	t2.start();
+	
+	}
+
+}
+=============================================================================================================================================================================
 Q.40 Create a class mobile and create a subclass product of it which is implementing Runnable interface. Create two thread objects . One thread is printing product id and second
      thread object is printing product name.
+  
+      
+ANS. package javaPrograms;
+
+class mobile210 {
+	
+}
+
+class product31 extends mobile210 implements Runnable {
+
+	@Override
+	public void run() {
+    
+	if(Thread.currentThread().getName()=="ABHISHEK")
+	{
+		System.out.println("PRODUCT NAME : "+Thread.currentThread().getName());
+
+	}
+	else
+	{		
+		System.out.println("PRODUCT ID : "+Thread.currentThread().getId());
+	}
+
+    }	
+}
+public class ASSI40 {
+
+	public static void main(String[] args) {
+    product31 pro = new product31();
+    
+    Thread th1 = new Thread(pro);
+    
+    th1.start();
+    
+    Thread th2 = new Thread(pro);
+    th2.setName("ROMA");
+    th2.start();
+    
+	}
+
+}
+==============================================================================================================================================================================
 Q.41 Create a string str="10-20-30-40-50". Tokenize the string and display the average of all numbers.
+
+ANS. package javaPrograms;
+
+import java.util.StringTokenizer;
+
+public class ASSIG41 {
+    static int sum = 0;
+	public static int cnt = 0;
+    public static int average;
+	public static void main(String[] args) {
+    String str = "10-20-30-40-50";
+    
+    System.out.println(str);
+    
+   StringTokenizer st = new StringTokenizer(str,"-");
+   
+   while(st.hasMoreTokens())
+   {
+	   int z = Integer.parseInt(st.nextToken());
+	   sum = sum + z;
+	   cnt++;
+   }
+   
+   average = sum/cnt;
+   System.out.println("AVERAGE : "+average);  
+  }
+}
+================================================================================================================================================================================
 Q.42 Display the current date and time and split the date and time and print it seperately.
 Ans)
 package practise;
@@ -1240,9 +1735,107 @@ public class A42 {
 }
 ============================================================================================================================================================
 Q.43 Create an ArrayList of names of 5 students and copy all names to another ArrayList.
+
+
+ANS. package javaPrograms;
+
+import java.util.ArrayList;
+
+import java.util.Iterator;
+
+public class ASSI43 {
+
+	public static void display(ArrayList<String> l)
+	{
+		Iterator<String> it = l.iterator();
+		
+		while(it.hasNext())
+		{
+			System.out.println(it.next());
+		}
+	}
+	public static void main(String[] args) {
+	ArrayList<String> names = new ArrayList<String>();
+	ArrayList<String> names2 = new ArrayList<String>();
+	
+	names.add("VISHAL");
+	names.add("SOHAM");
+	names.add("OM");
+	names.add("ARJUN");
+	names.add("DHIRAJ");
+    
+	names2 = names;
+	
+	display(names2);
+	
+  }
+
+}
+============================================================================================================================================================================
 Q.44 Create an ArrayList of 5 integers and display the average of all numbers.
+
+ANS. package javaPrograms;
+
+import java.util.ArrayList;
+
+public class ASSI44 {
+    public static int sum = 0;
+    public static int cont = 0;
+
+	public static void main(String[] args) {
+    ArrayList<Integer> numbers = new ArrayList<Integer>();
+    
+    numbers.add(320);
+    numbers.add(440);
+    numbers.add(560);
+    numbers.add(780);
+    numbers.add(800);
+
+    for(int i : numbers)
+    {
+    	sum = sum + i;
+    	cont++;
+    }
+    double avg;
+    avg = sum / cont;
+    
+    System.out.println("AVERAGE : "+avg);
+	}
+
+}
+============================================================================================================================================================================
 Q.45 Read firstname and Lastname from the user and concatenate Firstname and lastname including space in between, Then Split the full name and display firstname and lastname
      seperately.
+     
+      
+ANS. package javaPrograms;
+
+import java.util.Scanner;
+
+public class ASSI45 {
+    public static String firstnm,lastnm,Fullnm;
+	public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    
+    System.out.println("ENTER FIRSTNAME : ");
+    firstnm = sc.nextLine();
+    
+    System.out.println("ENTER LASTNAME : ");
+    lastnm = sc.nextLine();
+    		
+    Fullnm = firstnm.concat(" "+lastnm);
+    
+    System.out.println(Fullnm);
+    
+    String []st = Fullnm.split(" ");
+    
+    for(String s : st)
+    {
+    	System.out.println(s);
+    }
+  }
+}
+==============================================================================================================================================================================
 Q.46 Make an ArrayList of five city names and search a specific city and display city name with position in ArrayList.
 Ans)
 package practise;
@@ -1270,5 +1863,71 @@ public class A46 {
 ==========================================================================================================
 
 Q.47 Make ArrayList of 5 strings and display every string along with the length.
+
+ANS. package javaPrograms;
+
+import java.util.ArrayList;
+
+public class ASSI47 {
+
+    public static void main(String[] args) {
+    ArrayList<String> st = new ArrayList<String>();
+    
+    st.add("VISHAL");
+    st.add("VISHAL1212");
+    st.add("VISHAL3342");
+    st.add("VISHAL4543");
+    st.add("VISHAL132132132132");
+
+    for(String str : st)
+    {
+    	System.out.println(str+" - "+str.length());
+    }
+  }
+}
+
+=============================================================================================================================================================================
 Q.48 Create a List A which contains 5 strings .Create a List B where length of all strings from List A should be stored.
 
+
+ANS. package javaPrograms;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ASSI48 {
+    public static void setdetails(ArrayList<Integer> b,int l)
+    {
+    	b.add(l);
+    }
+    
+    public static void display(ArrayList<Integer> b)
+    {
+    	Iterator<Integer> it = b.iterator();
+    	
+    	while(it.hasNext())
+    	{
+    		System.out.println(it.next());
+    	}
+    }
+	public static void main(String[] args) {
+    ArrayList<String> A = new ArrayList<String>();
+    ArrayList<Integer> B = new ArrayList<Integer>();
+
+    A.add("VISHAL");
+    A.add("SOHAM");
+    A.add("OM");
+    A.add("ARJUN");
+
+    for(String st : A)
+    {
+    	System.out.println(st);
+    	setdetails(B,st.length());
+    }
+    System.out.println();
+    
+    display(B);
+  }
+
+}
+=============================================================================================================================================================================
