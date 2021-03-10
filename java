@@ -1,5 +1,6 @@
 Q.1 Create a program to Assign username & password in a method and display the username, password in a different function.
 Ans)
+class
 package practise;
 
 public class A1 {
