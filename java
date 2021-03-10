@@ -1932,3 +1932,35 @@ public class ASSI48 {
 
 }
 =============================================================================================================================================================================
+    Q.51 Write a JDBC Program to do the following operations on the table given :
+      Employee : eid (primary key) , name (varchar2 not null), city varchar2, salary number
+     a) Insert 5 employee records using a stored Procedure.
+     b) Update the salary of the last record.
+     c) Delete the 3rd record.
+     d) Display name and salary for all employees.
+     e) Add 1000/- to the salary of all employees.
+     f) Count Total number of records having salary more than 10000.
+     g) Show all records in descending order of salary.
+     h) Show all records in Alphabetical order of names of employees.
+     
+Q.52 Write a program to record the birth dates of 5 persons along with the names and do following : 
+     a) Show all records.
+     b) Use PreparedStatement to insert the records at run time.
+     
+Q.53 Write a program to define a functional interface which has a method printAlphabet()
+    Create a lambda expression which is invoked on the method.This method accepts the ASCII value 
+    of the character 65 to 70 (parameter) . Print all alphabets from 65 to 70.
+    65 -- A, 66 -- B,.........
+
+ Q.54 Create a Singleton class which has a method as fibbonaci() which prints fibbonacci series
+    0 1 1 2 3 5  of 8 terms
+ Q.55 Create a stack of 5 numbers and do the following operation : 
+      a) Push an element
+      b) Pop an element
+      c) Display all elements
+      d) print all elements in reverse order.
+      e) Print the average of all 5 elements
+      
+  Q.56 create a functional interface as Person which has a function getData() . Create two anonymous classes which implements Person interface. In first implementation
+       get data for student and in second implementation get data for employee . Also display the data in the same implementation method getData().
+     
