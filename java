@@ -1874,11 +1874,11 @@ public class ASSI47 {
     public static void main(String[] args) {
     ArrayList<String> st = new ArrayList<String>();
     
-    st.add("VISHAL");
-    st.add("VISHAL1212");
-    st.add("VISHAL3342");
-    st.add("VISHAL4543");
-    st.add("VISHAL132132132132");
+    st.add("JOSE");
+    st.add("ROMA1212");
+    st.add("RAHUL3342");
+    st.add("JAYA4543");
+    st.add("LAVINA132132132132");
 
     for(String str : st)
     {
